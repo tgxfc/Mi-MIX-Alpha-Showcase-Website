@@ -1,0 +1,339 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #151515;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.container-main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: white;
+    padding-top: 80px;
+}
+
+.navbar-background {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: black;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 0 30px;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+.navbar a:hover {
+    color: blue;
+}
+.navbar a.active {
+    font-weight: bold;
+}
+
+.overview {
+    display: flex;
+    justify-content: space-evenly;
+}
+.overview-text {
+    align-self: center;
+}
+.overview-text h1 {
+    font-size: 3em;
+    margin: 0;
+}
+.overview-text h3 {
+    font-size: 1.5em;
+    margin: 10px 0 0 0;
+    font-weight: lighter;
+}
+
+.showcase-1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    scroll-snap-align: start;
+    padding:200px 200px;
+}
+.showcase-1 h3 {
+    font-size: 3em;
+    margin: 0;
+}
+.showcase-1 p {
+    font-weight: lighter;
+    font-size: 1em;
+    margin: 0;
+}
+.showcase-1 img {
+    padding-top:120px;
+    align-self: center;
+}
+
+.display-top {
+    display: flex;
+    justify-content: center;
+}
+.display-top-text {
+    width:40%;
+    align-self: center;
+}
+.display-top-text h3 {
+    margin: 0;
+    font-size: 2em;
+}
+.display-top-text h3:first-child {
+    color:lightsteelblue;
+}
+.display-top-text p {
+    margin: 0;
+    font-weight: lighter;
+}
+.display-top-text-sub {
+    margin-top: 10px;
+}
+
+.flex-display {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 120px;
+    padding-bottom: 40px;
+}
+.display-panel {
+    width:22%;
+    background:#0F0F0F;
+}
+.display-panel-text {
+    padding: 0 20px;
+}
+.display-panel-text p {
+    font-weight: lighter;
+    font-size: 0.9em;
+    color: #979797;
+}
+.display-panel-text h4 {
+    font-weight: normal;
+    font-size: 1.2em;
+}
+.display-panel img {
+    max-width: 100%;
+    justify-content: center;
+    background-image: linear-gradient(180deg, #121524, #14141C);
+}
+.display-top-text-2 h3{
+    margin: 0;
+    font-size: 2em;
+}
+.display-top-text-2 h3:nth-child(2) {
+    color:lightsteelblue;
+}
+.display-2 .display-panel {
+    width:30%;
+}
+
+ul, li{
+    list-style: none;
+}
+.camera-body {
+    display: flex;
+    justify-content: center;
+}
+.camera-text {
+    padding-top:20px;
+}
+.camera-info h4{
+    font-size: 1.2em;
+    color: lightsteelblue;
+    border-bottom: lightsteelblue 1px solid;
+}
+.camera-header {
+    text-align: right;
+    padding-bottom: 10px;
+}
+.camera-header h3 {
+    font-size: 2em;
+    margin: 0;
+}
+.camera-header h3:first-child {
+    color: #979797;
+}
+
+
+.build-flex {
+    display: flex;
+    justify-content: space-between;
+}
+.build-flex div {
+    padding-top: 100px;
+    width: 30%;
+}
+.build-panel-1 {
+    padding:10px;
+    background: url("images/Mi-Mix-Alpha-design-summary.png") -10px -80px;
+    background-size: 310%;
+}
+.build-panel-2 {
+    padding:10px;
+    background: url("images/Mi-Mix-Alpha-design-summary.png") -770px -80px;
+    background-size: 310%;
+}
+.build-panel-3 {
+    padding:10px;
+    background: url("images/Mi-Mix-Alpha-design-summary.png") -390px -80px;
+    background-size: 310%;
+}
+.build-flex h4 {
+    font-weight: normal;
+    font-size: 1.2em;
+    margin-bottom: -10px;
+}
+.build-flex p {
+    font-weight: lighter;
+    font-size: 0.9em;
+    color: #979797;
+}
+.build-head {
+    text-align: center;
+    padding-bottom: 100px;
+}
+.build-text {
+    padding-top: 60px;
+    max-width: 70%;
+    margin: auto;
+    text-align: center;
+}
+.build-title h3 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: lighter;
+}
+.build-head>h3 {
+    font-size: 1.5em;
+    font-weight: lighter;
+    color: #979797;
+}
+
+.battery {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+.battery-text {
+    width: 30%;
+}
+.battery img {
+    align-self: end;
+}
+.battery-head {
+    width:120%;
+    font-weight: lighter;
+    font-size: 1.6em;
+}
+.battery-head h3:first-child {
+    color: #979797;
+    width:190%;
+    font-size: 2em;
+}
+.battery-text p {
+    color: #979797;
+    width: 80%;
+    padding-top: 20px;
+}
+
+
+.about {
+    position: relative;
+    padding: 20px;
+    z-index: 1; /* Ensure the section content is above the pseudo-element */
+}
+
+.about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    height: 100%;
+    width: 100vw; /* Full viewport width */
+    margin-left: -50vw; /* Move to the left by half of the viewport width */
+    background: url("images/bottom-bg.png") no-repeat center center;
+    background-size: cover;
+    z-index: -1; /* Place the pseudo-element behind the section content */
+}
+.about-text {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 120px;
+    width: 50%;
+}
+.about-head {
+    font-weight: lighter;
+    font-size: 2.3em;
+    padding-bottom: 10px;
+}
+.about-head h3 {
+    margin: 0;
+
+}
+.about-head h3:nth-child(2) {
+    font-size: 1.1em;
+}
+.about-exp {
+    width: 80%;
+    font-weight: lighter;
+}
+
+.processor {
+    display: flex;
+    flex-direction: column;
+}
+.processor-header h3 {
+    font-size: 1.5em;
+    font-weight: lighter;
+    text-align: center;
+    margin: 0;
+}
+.processor-header h3:first-child {
+    color: #979797;
+}
+.processor-flex {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+.processor img {
+    align-self: center;
+}
+.cpu-flex-text {
+    width: 50%;
+    text-align: right;
+    padding: 10px 10px;
+}
+
+section {
+    padding: 90px 20px;
+    scroll-snap-align: start;
+}
