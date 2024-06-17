@@ -2,11 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const navbar = document.querySelector(".navbar-background");
 
     window.addEventListener("scroll", function() {
-        if (window.scrollY > 100) {
-            navbar.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-        } else {
-            navbar.style.backgroundColor = "black";
-        }
+        navbar.style.backgroundColor = window.scrollY > 100 ? "rgba(0, 0, 0, 0.8)" : "black";
     });
 
     const links = document.querySelectorAll(".navbar a");
@@ -15,19 +11,26 @@ document.addEventListener("DOMContentLoaded", function() {
             link.classList.add("active");
         }
     });
-});
 
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    // Add click event listener to each link
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent default behavior
-
-        const sectionId = this.getAttribute('href').substring(1); // Get section ID without #
-
-        // Scroll to the corresponding section
-        document.getElementById(sectionId).scrollIntoView({
-            behavior: 'smooth' // Use smooth scrolling
+    const navbarLinks = document.querySelectorAll('.navbar-right a');
+    navbarLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = link.getAttribute('href');
+            
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const sectionId = href.substring(1);
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            }
+            
+            else {
+                link.classList.add("active");
+            }
         });
     });
 });
