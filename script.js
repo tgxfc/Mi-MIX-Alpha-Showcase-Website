@@ -6,11 +6,18 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     const links = document.querySelectorAll(".navbar a");
-    links.forEach(link => {
-        if (link.href === window.location.href) {
-            link.classList.add("active");
-        }
-    });
+
+    function setActiveLink() {
+        links.forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+    }
+
+    setActiveLink();
 
     const navbarLinks = document.querySelectorAll('.navbar-right a');
     navbarLinks.forEach(link => {
@@ -19,17 +26,15 @@ document.addEventListener("DOMContentLoaded", function() {
             
             if (href.startsWith('#')) {
                 e.preventDefault();
-                const sectionId = href.substring(1);
+                const sectionId = href.substring(1); // Remove #
                 const section = document.getElementById(sectionId);
                 if (section) {
                     section.scrollIntoView({
                         behavior: 'smooth'
                     });
                 }
-            }
-            
-            else {
-                link.classList.add("active");
+            } else {
+                setActiveLink();
             }
         });
     });
