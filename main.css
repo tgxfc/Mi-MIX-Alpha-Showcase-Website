@@ -17,6 +17,7 @@ body {
     height: 100%;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    overflow-x: hidden;
 }
 
 .container-main {
@@ -333,7 +334,80 @@ ul, li{
     padding: 10px 10px;
 }
 
+
+
+.img-glow {
+    display: block;
+    filter: drop-shadow(0 15px 20px rgba(50, 100, 255, 0.3));
+}
+
+.img-glow::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%;
+    height: 50px;
+    background: radial-gradient(circle, rgba(50, 100, 255, 0.5) 0%, rgba(0, 0, 0, 0) 80%);
+    z-index: -1;
+    pointer-events: none;
+}
+.img-glow-green {
+    display: block;
+    filter: drop-shadow(0 15px 20px rgba(0, 255, 0, 0.3));
+}
+
+.img-glow-green::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%;
+    height: 50px;
+    background: radial-gradient(circle, rgba(0, 255, 0, 0.5) 0%, rgba(0, 0, 0, 0) 80%);
+    z-index: -1;
+    pointer-events: none;
+}
+
 section {
     padding: 90px 20px;
     scroll-snap-align: start;
+}
+
+/* SPECS */
+
+.specs {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: white;
+    font-size: 1.2em;
+    font-weight: lighter;
+    padding-bottom: 40px;
+}
+.specs table {
+    margin: 15px 0;
+    background: #0F0F0F;
+    width: 100%;
+}
+.specs th, .specs td {
+    padding: 2px 10px;
+    vertical-align: top;
+}
+.specs th {
+    color:lightsteelblue;
+    font-weight: bold;
+    font-size: 1.4em;
+    width: 15%;
+    text-align: left;
+}
+.td-head {
+    width: 12%;
+    font-weight: bold;
+}
+#image-specs {
+    display: flex;
+    justify-content: center;
 }
