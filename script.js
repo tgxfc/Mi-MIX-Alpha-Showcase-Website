@@ -1,6 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
     const navbar = document.querySelector(".navbar-background");
 
+    window.addEventListener("scroll", function() {
+        if (window.scrollY > 100) {
+            navbar.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+        } else {
+            navbar.style.backgroundColor = "black";
+        }
+    });
+
     const links = document.querySelectorAll(".navbar a");
     links.forEach(link => {
         if (link.href === window.location.href) {
@@ -10,48 +18,16 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.navbar a');
-    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Add click event listener to each link
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default behavior
 
-    function scrollToSection(event) {
-        event.preventDefault();
-        const targetId = event.target.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
+        const sectionId = this.getAttribute('href').substring(1); // Get section ID without #
 
-        if (targetSection) {
-            window.scrollTo({
-                top: targetSection.offsetTop - navbarHeight + 1, // Adjusted scroll position
-                behavior: 'smooth'
-            });
-        }
-    }
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', scrollToSection);
+        // Scroll to the corresponding section
+        document.getElementById(sectionId).scrollIntoView({
+            behavior: 'smooth' // Use smooth scrolling
+        });
     });
-
-    function updateActiveNavLink() {
-        let currentSection = '';
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-
-            if (window.scrollY >= sectionTop - navbarHeight + 1) {
-                currentSection = `#${section.id}`;
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === currentSection) {
-                link.classList.add('active');
-            }
-        });
-    }
-
-    document.addEventListener('scroll', updateActiveNavLink);
-    window.addEventListener('resize', updateActiveNavLink); // Handle resize events
 });
