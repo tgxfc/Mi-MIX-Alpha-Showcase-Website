@@ -268,7 +268,7 @@ ul, li{
 .about {
     position: relative;
     padding: 20px;
-    z-index: 1; /* Ensure the section content is above the pseudo-element */
+    z-index: 1;
 }
 
 .about::before {
@@ -278,11 +278,11 @@ ul, li{
     left: 50%;
     right: 50%;
     height: 100%;
-    width: 100vw; /* Full viewport width */
-    margin-left: -50vw; /* Move to the left by half of the viewport width */
+    width: 100vw;
+    margin-left: -50vw;
     background: url("images/bottom-bg.png") no-repeat center center;
     background-size: cover;
-    z-index: -1; /* Place the pseudo-element behind the section content */
+    z-index: -1;
 }
 .about-text {
     padding-top: 80px;
@@ -342,7 +342,6 @@ ul, li{
 }
 
 .img-glow::after {
-    content: '';
     position: absolute;
     bottom: -20px;
     left: 50%;
