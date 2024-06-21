@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
             
             if (href.startsWith('#')) {
                 e.preventDefault();
-                const sectionId = href.substring(1); // Remove #
+                const sectionId = href.substring(1);
                 const section = document.getElementById(sectionId);
                 if (section) {
                     section.scrollIntoView({
